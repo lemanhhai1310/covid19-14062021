@@ -6,7 +6,7 @@ const Highlight = () => {
             <div>
                 <div className="uk-card uk-card-default uk-card-body">
                     <h3 className="uk-card-title">Default</h3>
-                    <p></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
             </div>
             <div>

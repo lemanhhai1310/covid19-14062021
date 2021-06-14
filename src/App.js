@@ -9,10 +9,9 @@ const App = () => {
     const [countries,setCountries] = useState([])
 
     useEffect(() => {
-        getCountries()
-            .then(res => {
-                setCountries(res.data)
-            })
+        getCountries().then(res => {
+            setCountries(res.data)
+        })
     },[])
 
     return (
