@@ -1,6 +1,22 @@
 import React from 'react'
 
-const Highlight = () => {
+const Highlight = ({report}) => {
+    const data = report && report.length ? report[report.length - 1] : []
+    const summary = [
+        {
+            title: 'Số ca nhiễm',
+            count: data.Confirmed,
+        },
+        {
+            title: 'Số ca hồi phục',
+            count: data.Recovered,
+        },
+        {
+            title: 'Số ca tử vong',
+            count: data.Deaths,
+        },
+    ]
+
     return (
         <div className="uk-child-width-1-3@m uk-grid uk-grid-match">
             <div>
