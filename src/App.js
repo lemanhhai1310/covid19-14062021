@@ -26,7 +26,6 @@ const App = () => {
 
             getReportByCountry(Slug).then(res => {
                 setReport(res.data)
-                console.log(res.data)
             })
         }
     },[countries,selectedCountryId])

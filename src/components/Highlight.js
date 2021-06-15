@@ -1,4 +1,5 @@
 import React from 'react'
+import NumberFormat from "react-number-format";
 
 const Highlight = ({report}) => {
     const data = report && report.length ? report[report.length - 1] : []
@@ -19,24 +20,28 @@ const Highlight = ({report}) => {
 
     return (
         <div className="uk-child-width-1-3@m uk-grid uk-grid-match">
-            <div>
-                <div className="uk-card uk-card-default uk-card-body">
-                    <h3 className="uk-card-title">Default</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div>
-                <div className="uk-card uk-card-primary uk-card-body">
-                    <h3 className="uk-card-title">Default</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div>
-                <div className="uk-card uk-card-secondary uk-card-body">
-                    <h3 className="uk-card-title">Default</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-            </div>
+            {
+                summary.map((item) => {
+                    return (
+                        <div key={item.title}>
+                            <div className="uk-card uk-card-default uk-card-body">
+                                <h3 className="uk-card-title">{item.title}</h3>
+                                <p>
+                                    <NumberFormat
+                                        value={item.count}
+                                        displayType={"text"}
+                                        thousandSeparator={true}
+                                        decimalScale={1}
+                                        renderText={(value) => (
+                                            <span>{value}</span>
+                                        )}
+                                    />
+                                </p>
+                            </div>
+                        </div>
+                    )
+                })
+            }
         </div>
     )
 }
